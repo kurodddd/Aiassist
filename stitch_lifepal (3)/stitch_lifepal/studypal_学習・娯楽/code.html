@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LifePal - 学習 &amp; プレイ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Inter", "Noto Sans JP", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings:
+      'FILL' 1
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111618] dark:text-gray-200">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="sticky top-0 h-screen w-64 flex-shrink-0 bg-white dark:bg-[#15232b] p-4 flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB33x6N8vW7AMg8YN8zaQgVANhwaRX1mtVe2KX-vqfE9gSQEDju8Hdy69ESRDIKwXWX_wAQhKXEJq7oUmhb96z72bJMYCFIbE3RkcjKvEsmJnYop3yxJ2NAzzKKeny_31PLFC0QrWmvyX_kUArGf1d2ZTY0D5W2iVDn8fHwuIWpHF4zApa4K1udX11SZbs0zwVzZ8HbMTao1d0eGizZjiokVGilDLVg5JN--cBff1ak0JYTJBDOEGyDwSyzZHlewbfjJis-mR93WX_2");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#111618] dark:text-white text-base font-medium leading-normal">田中 太郎</h1>
+<p class="text-[#617c89] dark:text-gray-400 text-sm font-normal leading-normal">LifePal ユーザー</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-[#111618] dark:text-gray-300">home</span>
+<p class="text-[#111618] dark:text-gray-300 text-sm font-medium leading-normal">ホーム</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30" href="#">
+<span class="material-symbols-outlined fill text-primary">person</span>
+<p class="text-primary text-sm font-bold leading-normal">生活</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-[#111618] dark:text-gray-300">account_balance</span>
+<p class="text-[#111618] dark:text-gray-300 text-sm font-medium leading-normal">金融</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-[#111618] dark:text-gray-300">favorite</span>
+<p class="text-[#111618] dark:text-gray-300 text-sm font-medium leading-normal">健康</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-[#111618] dark:text-gray-300">restaurant</span>
+<p class="text-[#111618] dark:text-gray-300 text-sm font-medium leading-normal">食事</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">設定</span>
+</button>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-[#111618] dark:text-gray-300">help</span>
+<p class="text-[#111618] dark:text-gray-300 text-sm font-medium leading-normal">ヘルプ</p>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8 grid grid-cols-12 gap-6">
+<!-- Left & Center Column -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
+<!-- PageHeading -->
+<header>
+<p class="text-[#111618] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">学習 &amp; プレイ</p>
+<p class="text-[#617c89] dark:text-gray-400 text-base font-normal leading-normal mt-2">AIと共に学び、楽しみながら目標を達成しましょう。</p>
+</header>
+<!-- Stats -->
+<section class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-[#15232b] border border-transparent dark:border-gray-800">
+<p class="text-[#111618] dark:text-gray-300 text-base font-medium leading-normal">今日のゴール</p>
+<p class="text-[#111618] dark:text-white tracking-light text-2xl font-bold leading-tight">3/5 タスク</p>
+<p class="text-[#078836] dark:text-green-400 text-base font-medium leading-normal">+10% vs 昨日</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-[#15232b] border border-transparent dark:border-gray-800">
+<p class="text-[#111618] dark:text-gray-300 text-base font-medium leading-normal">今週の学習時間</p>
+<p class="text-[#111618] dark:text-white tracking-light text-2xl font-bold leading-tight">8時間30分</p>
+<p class="text-[#078836] dark:text-green-400 text-base font-medium leading-normal">+5% vs 先週</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-[#15232b] border border-transparent dark:border-gray-800">
+<p class="text-[#111618] dark:text-gray-300 text-base font-medium leading-normal">完了タスク数</p>
+<p class="text-[#111618] dark:text-white tracking-light text-2xl font-bold leading-tight">12</p>
+<p class="text-[#078836] dark:text-green-400 text-base font-medium leading-normal">+8% vs 先週</p>
+</div>
+</section>
+<!-- Main Content Panel -->
+<div class="flex flex-col lg:flex-row gap-6">
+<!-- Learning Plan -->
+<div class="flex-1 bg-white dark:bg-[#15232b] rounded-xl p-6 border border-transparent dark:border-gray-800">
+<h2 class="text-[#111618] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">AIが提案する今日の学習プラン</h2>
+<div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-700">
+<label class="flex items-center gap-x-3 py-3 cursor-pointer group">
+<input checked="" class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-[#111618] dark:text-gray-300 group-hover:text-primary dark:group-hover:text-primary transition-colors text-base font-normal leading-normal">数学 第3章の復習</p>
+</label>
+<label class="flex items-center gap-x-3 py-3 cursor-pointer group">
+<input checked="" class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-[#111618] dark:text-gray-300 group-hover:text-primary dark:group-hover:text-primary transition-colors text-base font-normal leading-normal">英単語テスト (20問)</p>
+</label>
+<label class="flex items-center gap-x-3 py-3 cursor-pointer group">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-[#111618] dark:text-gray-300 group-hover:text-primary dark:group-hover:text-primary transition-colors text-base font-normal leading-normal">物理の課題レポート作成</p>
+</label>
+<label class="flex items-center gap-x-3 py-3 cursor-pointer group">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-[#111618] dark:text-gray-300 group-hover:text-primary dark:group-hover:text-primary transition-colors text-base font-normal leading-normal">歴史のオンライン講義視聴</p>
+</label>
+<label class="flex items-center gap-x-3 py-3 cursor-pointer group">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<p class="text-[#111618] dark:text-gray-300 group-hover:text-primary dark:group-hover:text-primary transition-colors text-base font-normal leading-normal">プログラミング課題</p>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Gamification Panel -->
+<div class="bg-white dark:bg-[#15232b] rounded-xl p-6 border border-transparent dark:border-gray-800">
+<h2 class="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-4">Myリワード</h2>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<p class="text-[#617c89] dark:text-gray-400">現在のポイント</p>
+<p class="text-lg font-bold text-primary">1,250 pt</p>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-[#617c89] dark:text-gray-400">ランキング</p>
+<p class="text-lg font-bold text-[#111618] dark:text-white">15位 / 120人</p>
+</div>
+<div>
+<p class="text-[#617c89] dark:text-gray-400 mb-2">獲得バッジ</p>
+<div class="flex gap-3">
+<div class="flex items-center justify-center size-12 bg-primary/10 rounded-full text-primary text-2xl" data-alt="First step badge"><span class="material-symbols-outlined">footprint</span></div>
+<div class="flex items-center justify-center size-12 bg-primary/10 rounded-full text-primary text-2xl" data-alt="Perfect week badge"><span class="material-symbols-outlined">star</span></div>
+<div class="flex items-center justify-center size-12 bg-primary/10 rounded-full text-primary text-2xl" data-alt="Quick learner badge"><span class="material-symbols-outlined">bolt</span></div>
+<div class="flex items-center justify-center size-12 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-400 dark:text-gray-500 text-2xl" data-alt="Locked badge"><span class="material-symbols-outlined">lock</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Chat Panel -->
+<div class="bg-white dark:bg-[#15232b] rounded-xl p-6 border border-transparent dark:border-gray-800 flex-1 flex flex-col">
+<h2 class="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-4">AIチャット</h2>
+<div class="flex-1 flex flex-col">
+<div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+<button class="px-4 py-2 text-sm font-medium border-b-2 border-primary text-primary">学習AI</button>
+<button class="px-4 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 border-b-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">授業用</button>
+</div>
+<div class="flex-1 bg-background-light dark:bg-background-dark p-4 rounded-lg text-sm text-gray-500 dark:text-gray-400">
+<p>こんにちは！学習に関する質問なら何でも聞いてください。</p>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">add_photo_alternate</span>
+</button>
+<input class="flex-1 h-10 px-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-600 focus:ring-1 focus:ring-primary focus:border-primary text-sm" placeholder="写真から質問、Pythonで計算..." type="text"/>
+<button class="p-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Minigames Panel -->
+<div class="bg-white dark:bg-[#15232b] rounded-xl p-6 border border-transparent dark:border-gray-800">
+<h2 class="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-4">ひと休み</h2>
+<div class="space-y-3">
+<a class="flex items-center gap-4 p-3 rounded-lg bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-2xl">neurology</span>
+<p class="font-medium text-[#111618] dark:text-gray-200">10分で脳トレ</p>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-lg bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-2xl">psychology</span>
+<p class="font-medium text-[#111618] dark:text-gray-200">集中力ゲーム</p>
+</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

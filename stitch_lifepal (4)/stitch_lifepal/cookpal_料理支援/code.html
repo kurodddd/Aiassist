@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LifePal - 料理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#FF7F50", // Coral
+              "secondary": "#E9ECEF",
+              "accent": "#28A745", // Green
+              "text-main": "#111811",
+              "text-subtle": "#6C757D",
+              "background-light": "#F8F9FA",
+              "background-dark": "#1a1a1a",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#2a2a2a",
+              "border-light": "#E9ECEF",
+              "border-dark": "#3a3a3a",
+            },
+            fontFamily: {
+              "display": ["Epilogue", "Noto Sans JP", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.75rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-size: 24px;
+      }
+      .material-symbols-outlined.fill {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main dark:text-white/90">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm px-6 py-3">
+<div class="flex items-center gap-4 text-text-main dark:text-white/90">
+<div class="size-6 text-accent">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">LifePal</h2>
+</div>
+<nav class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="flex items-center gap-8">
+<a class="text-sm font-bold leading-normal text-text-main dark:text-white/90" href="#">生活</a>
+<a class="text-sm font-medium leading-normal text-text-subtle dark:text-white/60 hover:text-text-main dark:hover:text-white/90" href="#">金融</a>
+<a class="text-sm font-medium leading-normal text-text-subtle dark:text-white/60 hover:text-text-main dark:hover:text-white/90" href="#">健康</a>
+<a class="text-sm font-medium leading-normal text-text-subtle dark:text-white/60 hover:text-text-main dark:hover:text-white/90" href="#">学習</a>
+<a class="text-sm font-medium leading-normal text-text-subtle dark:text-white/60 hover:text-text-main dark:hover:text-white/90" href="#">娯楽</a>
+</div>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-background-light dark:bg-background-dark text-text-main dark:text-white/90">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRxtJEdJKnUzwaA-a9HEGO-grlt8cAnrpM4iqAVsKAt9aI-ok4ocGnQqEJxuY7pr7kZhXiNPCtAzVJ1gPROYwpPFg2HQod299RWJW1Wvf0Ff_h3KPKkcw368sok-Qfx4DSArqDbHuqrAGjju4t8dHacIgHNQ0JV6G0n-25nX5VxgSga6pINUmRyRR7dG_JU9ykG_0w4GcPrKeBxKLEqawu3JeD8kqFzUu9pJugqqGV4wXBsX_-H-m1FX-aJLReyFFCTiZdizanzORM");'></div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-screen-2xl mx-auto p-4 lg:p-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full">
+<!-- Left Column: Virtual Fridge -->
+<aside class="lg:col-span-3 flex flex-col gap-4">
+<div class="flex h-full flex-col justify-between bg-surface-light dark:bg-surface-dark rounded-xl p-4">
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white/90 px-2">仮想冷蔵庫</h3>
+<!-- SearchBar -->
+<div class="px-2">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-subtle dark:text-white/60 flex border-none bg-background-light dark:bg-background-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white/90 focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-background-light dark:bg-background-dark h-full placeholder:text-text-subtle dark:placeholder:text-white/60 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="食材を検索" value=""/>
+</div>
+</label>
+</div>
+<!-- Tabs -->
+<div>
+<div class="flex border-b border-border-light dark:border-border-dark px-2 gap-6">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-text-main dark:border-b-white/90 text-text-main dark:text-white/90 pb-3 pt-2" href="#">
+<p class="text-sm font-bold tracking-wide">野菜</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-subtle dark:text-white/60 pb-3 pt-2" href="#">
+<p class="text-sm font-bold tracking-wide">肉</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-subtle dark:text-white/60 pb-3 pt-2" href="#">
+<p class="text-sm font-bold tracking-wide">魚</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-subtle dark:text-white/60 pb-3 pt-2" href="#">
+<p class="text-sm font-bold tracking-wide">その他</p>
+</a>
+</div>
+</div>
+<!-- Checklists -->
+<div class="px-2" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill='%23ffffff'%20xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');">
+<label class="flex items-center gap-x-3 py-3 flex-row cursor-pointer">
+<input class="h-5 w-5 rounded-md border-border-light dark:border-border-dark border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark focus:ring-primary/50 focus:outline-none" type="checkbox"/>
+<p class="text-text-main dark:text-white/90 text-base font-normal leading-normal">トマト 3個 <span class="text-sm text-primary font-medium">(賞味期限: 3日後)</span></p>
+</label>
+<label class="flex items-center gap-x-3 py-3 flex-row cursor-pointer">
+<input class="h-5 w-5 rounded-md border-border-light dark:border-border-dark border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark focus:ring-primary/50 focus:outline-none" type="checkbox"/>
+<p class="text-text-main dark:text-white/90 text-base font-normal leading-normal">レタス 1玉 <span class="text-sm text-text-subtle">(賞味期限: 5日後)</span></p>
+</label>
+<label class="flex items-center gap-x-3 py-3 flex-row cursor-pointer">
+<input class="h-5 w-5 rounded-md border-border-light dark:border-border-dark border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark focus:ring-primary/50 focus:outline-none" type="checkbox"/>
+<p class="text-text-main dark:text-white/90 text-base font-normal leading-normal">きゅうり 2本 <span class="text-sm text-text-subtle">(賞味期限: 4日後)</span></p>
+</label>
+<label class="flex items-center gap-x-3 py-3 flex-row cursor-pointer">
+<input checked="" class="h-5 w-5 rounded-md border-border-light dark:border-border-dark border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark focus:ring-primary/50 focus:outline-none" type="checkbox"/>
+<p class="text-text-main dark:text-white/90 text-base font-normal leading-normal line-through text-text-subtle">玉ねぎ 5個 <span class="text-sm text-text-subtle">(賞味期限: 10日後)</span></p>
+</label>
+</div>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-accent text-white text-base font-bold leading-normal tracking-wide gap-2 mt-4 hover:bg-accent/90 transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="truncate">食材を追加</span>
+</button>
+</div>
+</aside>
+<!-- Center Column: AI Recipe -->
+<main class="lg:col-span-6 flex flex-col gap-6">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm">
+<div class="relative">
+<img class="w-full h-80 object-cover" data-alt="A healthy and colorful salad bowl with grilled chicken." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPbeS9T1P8Td2ehH5xz6fszph4jerDKfduAAZK2VtwX1PQ6J7SFPzleF89-D340mE4gDF8oKxZ-EytBRAjEQ59C5vL9grrJD9clpZyiez_ZV_kRJLl0T_Y-JXiZtwv3L64WJgNF0k8ImAi3Wgje3b0Ri77N6xI0ZXtXMrFe6aTp7iYhnJx-toSoof42DnCChoLqZ0oZh9FnrC3ajKFXHM_lpWfW_iMiSP9cTy-PP_HkdoeoRuap6NqocRp-MLS_p2978YvK_UGMUYL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h1 class="text-3xl font-bold text-white mb-2">冷蔵庫の食材で作る、彩り豊かなチキンサラダ</h1>
+<p class="text-white/90">HealthPalのデータに基づいた、あなたに最適なヘルシーレシピです。</p>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<span class="inline-block bg-primary/20 text-primary-darker dark:text-primary font-semibold text-xs px-3 py-1 rounded-full">30分以内</span>
+<span class="inline-block bg-accent/20 text-accent-darker dark:text-accent font-semibold text-xs px-3 py-1 rounded-full">ヘルシー</span>
+<span class="inline-block bg-secondary dark:bg-border-dark text-text-subtle dark:text-white/60 font-semibold text-xs px-3 py-1 rounded-full">節約</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-4">調理手順</h3>
+<div class="space-y-4">
+<div class="flex gap-4 items-start p-4 bg-background-light dark:bg-background-dark rounded-lg">
+<div class="flex-shrink-0 size-16 rounded-lg bg-center bg-cover" data-alt="Chopped vegetables in a bowl" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwrZa3HAsdEuQ0DJzrZuajH4Eaa6m7V5juL-sWELFPccutDJ7fehznj2wmdAf0oJKQV3bCLMNvG8smkOkjkOVL5K20ZU_OnzkRqxoADOgU5P4aELyq4cmvksxKFCLr2pSuLiM3hKqhxWeSmPXsy498mczdZ3AOhU9mowadSloxjKFo_sGBWoxtfQ9ZDSBxadwMJXfFQICHfVoMVUBsJayrtrfsi7s45En49lKps8xCctcu_lt4caZBiWSylnfaC8faTUqouS1sEO8X')"></div>
+<div class="flex-grow">
+<p class="font-bold text-text-main dark:text-white/90">ステップ 1</p>
+<p class="text-text-subtle dark:text-white/70 text-sm">トマト、レタス、きゅうりを洗い、食べやすい大きさにカットします。</p>
+</div>
+</div>
+<div class="flex gap-4 items-start p-4 bg-background-light dark:bg-background-dark rounded-lg">
+<div class="flex-shrink-0 size-16 rounded-lg bg-center bg-cover" data-alt="Grilled chicken breast on a pan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHsBP1ayb4HvpxBx_UJRvCDhny6Hr1X4DOQtG2BymWtRj5rMkLkTo07IOBicQWJ68eWJwI238e0EGsL_NcvNIyZTKntVUCWuwIC17lnTClRIODQUVQDSJocOk6BrdVNpGWsOXTZWnmd9PZ_PTfgi_JnOmrLFRWJgUHXLPfSUGZGjRQoh44ix3ee7xjH78sAknrqyoSNf4j5UGrWbHvq1UNW53JANrju6SE90SowK1eys5wQxVa4SmCB7-Y8FBYSjMNceqV-2r1IaGT')"></div>
+<div class="flex-grow">
+<p class="font-bold text-text-main dark:text-white/90">ステップ 2</p>
+<p class="text-text-subtle dark:text-white/70 text-sm">鶏むね肉に塩コショウを振り、フライパンで両面に焼き色がつくまで焼きます。</p>
+</div>
+</div>
+<div class="flex gap-4 items-start p-4 bg-background-light dark:bg-background-dark rounded-lg">
+<div class="flex-shrink-0 size-16 rounded-lg bg-center bg-cover" data-alt="Final salad with dressing" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfnR0sOQ9Rqg7a4GIaKV-rb1Hltwvic4pQvc9bNB80wNCgPuGTo4mLqJPFJh0TR73XxtFWlW_XrtZhUyK8yA6Eok7oQLCng9m1YvnZuh7q7-CW5Be1nVeaEvYWcdJNGmx0lTVijD7JE3OgKl2IXaiWzRgW3mOKsrjr3ve9gi-fS5TjaHyH8WxmFWySwtP2mXYGNzAFI8WgC9pcGKcw6IsPLSQimeJy-MStyPIF5SE_aVkLHpQWJbYKRZnAwcSea_6tl-qyaNb2Qgnw')"></div>
+<div class="flex-grow">
+<p class="font-bold text-text-main dark:text-white/90">ステップ 3</p>
+<p class="text-text-subtle dark:text-white/70 text-sm">カットした野菜とスライスした鶏肉を盛り付け、お好みのドレッシングをかければ完成です。</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-4 bg-primary text-white text-lg font-bold leading-normal tracking-wide gap-2 mt-2 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="truncate">このレシピで作る</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Right Column: Cooking Log & Health Panel -->
+<aside class="lg:col-span-3 flex flex-col gap-6">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 flex flex-col gap-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white/90 px-2">調理記録</h3>
+<!-- Calendar Widget -->
+<div class="p-2">
+<div class="grid grid-cols-7 text-center text-xs text-text-subtle dark:text-white/60">
+<span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
+</div>
+<div class="grid grid-cols-7 text-center mt-2 text-sm">
+<span class="text-text-subtle dark:text-white/60">28</span><span class="text-text-subtle dark:text-white/60">29</span><span class="text-text-subtle dark:text-white/60">30</span>
+<span>1</span><span>2</span><span>3</span><span class="relative"><span class="absolute inset-0.5 bg-primary/20 rounded-full"></span>4</span>
+<span>5</span><span>6</span><span>7</span><span class="relative"><span class="absolute inset-0.5 bg-primary/20 rounded-full"></span>8</span>
+<span class="font-bold text-primary relative"><span class="absolute inset-0 bg-primary/30 rounded-full"></span><span class="relative">9</span></span><span>10</span><span>11</span>
+<span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+<span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+</div>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary/20 text-primary-darker dark:text-primary text-base font-bold leading-normal tracking-wide gap-2 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined">edit_calendar</span>
+<span class="truncate">今日の調理を記録する</span>
+</button>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="grid place-content-center size-10 rounded-full bg-accent/20">
+<span class="material-symbols-outlined text-accent">health_and_safety</span>
+</div>
+<h3 class="text-lg font-bold text-text-main dark:text-white/90">HealthPal 連携</h3>
+</div>
+<p class="text-sm text-text-subtle dark:text-white/70">今日の目標摂取カロリーと、このレシピがどう貢献するかを確認しましょう。</p>
+<div class="w-full bg-background-light dark:bg-background-dark rounded-full h-2.5">
+<div class="bg-accent h-2.5 rounded-full" style="width: 45%"></div>
+</div>
+<div class="flex justify-between text-sm">
+<p>現在: <span class="font-bold">900 kcal</span></p>
+<p>目標: <span class="font-bold">2000 kcal</span></p>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 flex flex-col gap-3">
+<h3 class="text-lg font-bold text-text-main dark:text-white/90 px-2">最近作った料理</h3>
+<div class="space-y-3 px-2">
+<div class="flex items-center gap-4">
+<img class="size-12 rounded-lg object-cover" data-alt="A delicious pizza with cheese and pepperoni" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq1GM4R5q6zvyoxmOI07obCuF9YGUpUOHmwtcWEqrob3I1mk12LgpJupD1jLijFUkG7WkqMwcoFpD1xJbrn17xQ4w4LnNGxNDFzyUkzBPSwqLE1jHtApUNCAsAwWtzXptgwre3SRwdgTS7M7ZmlnHeB1boVfHw0ttFbl2xp7CAXBBQzU92E1jeXsbe9X2DIMqrcTASBuLkVX-QWeAoWi6JnxJgZDJK6mSJ5fzZFyPvzEOlsdxHR3wi5pjbiy_iFsC6__TY06wUhgLx"/>
+<div>
+<p class="font-semibold text-text-main dark:text-white/90 text-sm">マルゲリータピザ</p>
+<p class="text-xs text-text-subtle dark:text-white/60">昨日</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img class="size-12 rounded-lg object-cover" data-alt="Stack of fluffy pancakes with syrup and berries" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC01fq84LO5EGLcv-lzThUYHLR6XE9y7eoDyJVCDwXAp3bJjqMJlJVWitzQobxzG5U1aUojQmWJMiKzujxX1-ezjXRQEMlF4tu99VwtI8Wx2dj1Oxqhy2zX8oPnpC-SiwocEv-a4_RUKNipgSqQW62XuMqN6lEEEUxqi-xNFKBXkFZ0p3PnbEiCm6Gz6c-BT10sUL1q63d2WKfC7fd6tdHuApu-H8JqV3-3kPbK7TANsRMRkym16S7RF0orZEkiFRhJGZ6CvLS1vTlR"/>
+<div>
+<p class="font-semibold text-text-main dark:text-white/90 text-sm">ベリーパンケーキ</p>
+<p class="text-xs text-text-subtle dark:text-white/60">3日前</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

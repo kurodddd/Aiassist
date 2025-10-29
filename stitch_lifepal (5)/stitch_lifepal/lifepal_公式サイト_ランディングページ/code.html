@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LifePal - 次世代AIスーパーアプリ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3A4DFF",
+                        "background-light": "#F5F7FA",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans JP", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700 h-16">
+<div class="flex items-center gap-3 text-gray-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tighter">LifePal</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex items-center gap-6 text-sm font-medium">
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#vision">ビジョン</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#features">機能</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#create">制作</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#faq">FAQ</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+<span class="truncate">ダウンロード</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- HeroSection -->
+<section class="py-20 md:py-32">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6 text-center md:text-left">
+<h1 class="text-4xl font-black leading-tight tracking-tighter text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+                                    AIで、あなたの毎日をアップグレードする。
+                                </h1>
+<p class="text-base font-normal leading-normal text-gray-600 dark:text-gray-300 md:text-lg">
+                                    LifePalは、金融、健康、食事から学習、娯楽まで、生活のすべてを一つのアプリでサポートする次世代AIスーパーアプリです。
+                                </p>
+<div class="flex justify-center md:justify-start">
+<button class="flex min-w-[84px] max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/30 hover:bg-primary/90 transition-all">
+<span class="truncate">無料でダウンロード</span>
+</button>
+</div>
+</div>
+<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl shadow-2xl" data-alt="Abstract 3D render of interconnected nodes representing AI" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDx3ASPlaSe01B0S4OsndrPgTCGKaBUYLjDWMMZ4IIlorBQkfEG64LHqlnMuQuYoVA4ikE3mrvjYDq14X3p1wrWd3hifZXLskApjRGpRmVB-KTAu25GIFRR_0ErbxvT90DvTDQpHgVXg_q3i8IQU1EEDRPZ5WcY15fPdaxBx4Xa3659_2twRYrps9_7dWCLOvtBtOEPolebu6AsZ92KSS_kyxAPsTrmDc9JmvwZdzky-oTDA06muijz5_CTiHlCAbuK0fLKc4zqoCgN");'></div>
+</div>
+</div>
+</section>
+<!-- Feature Showcase Section -->
+<section class="py-20 md:py-24 bg-white dark:bg-gray-900" id="features">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center text-center gap-4 mb-12">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">LifePalが提供する5つのコア機能</h2>
+<p class="max-w-2xl text-gray-600 dark:text-gray-300">あなたの生活を豊かにする、パーソナライズされたAI体験。</p>
+</div>
+<!-- Tabs Component -->
+<div class="max-w-3xl mx-auto mb-8">
+<div class="flex border-b border-gray-200 dark:border-gray-700 justify-between">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary gap-2 pb-3 pt-2.5 flex-1" href="#">
+<span class="material-symbols-outlined">payments</span>
+<p class="text-sm font-bold tracking-wide">金融</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:border-primary/50 gap-2 pb-3 pt-2.5 flex-1 transition-colors" href="#">
+<span class="material-symbols-outlined">health_and_safety</span>
+<p class="text-sm font-bold tracking-wide">健康</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:border-primary/50 gap-2 pb-3 pt-2.5 flex-1 transition-colors" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<p class="text-sm font-bold tracking-wide">食事</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:border-primary/50 gap-2 pb-3 pt-2.5 flex-1 transition-colors" href="#">
+<span class="material-symbols-outlined">school</span>
+<p class="text-sm font-bold tracking-wide">学習</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:border-primary/50 gap-2 pb-3 pt-2.5 flex-1 transition-colors" href="#">
+<span class="material-symbols-outlined">videogame_asset</span>
+<p class="text-sm font-bold tracking-wide">娯楽</p>
+</a>
+</div>
+</div>
+<!-- Tab Content -->
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="w-full aspect-video bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl" data-alt="A screenshot of the LifePal app's finance dashboard showing charts and graphs." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVvaKLe8S86C233lgt1Ih-ZyeQ61ESCwoizCQFkxvlOu8VYuspUBzXrlkecdOxcWSwdV9qLweeGyeh6mKiyjf-1m9-x5VJzyEnZSakfavJo3Opu-YJK07W7L8hGEtet7ilKT9DdUw6LgLOWK-FmaWTixYLwD0nGmtolI16pCXn47qO_ltDFsnxd--PP6Y6JFCLnakzo1LLrAvslzjS4l64IHjNb9DUmDPefBVuAUmSzhytch1AcMgmBlbOZz87rFWaO0T_uFZn-w4A");'></div>
+<div class="flex flex-col gap-4">
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white">資産管理とパーソナライズされた金融アドバイスを簡単に。</h3>
+<p class="text-gray-600 dark:text-gray-300">LifePalのAIがあなたの支出を分析し、最適な投資戦略を提案。複雑な金融の世界を、あなたのパーソナルアシスタントがナビゲートします。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Chat Demo Section -->
+<section class="py-20 md:py-24">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-4 text-center lg:text-left">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">あなたのための、パーソナルパートナー。</h2>
+<p class="text-gray-600 dark:text-gray-300">自然な対話で、質問に答え、タスクをこなし、アイデアを形にします。LifePalのAIチャットは、ただのツールではありません。あなたの毎日を理解し、支えるパートナーです。</p>
+</div>
+<div class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg">
+<div class="flex flex-col gap-4 h-[400px]">
+<div class="flex justify-end">
+<div class="bg-primary text-white p-3 rounded-lg max-w-xs">
+<p class="text-sm">来週末の京都旅行、2泊3日で最高のプランを提案して</p>
+</div>
+</div>
+<div class="flex justify-start">
+<div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg max-w-xs animate-pulse">
+<p class="text-sm">もちろんです。どのようなことに興味がありますか？例えば、お寺巡り、グルメ、自然散策など...</p>
+</div>
+</div>
+<div class="flex justify-end">
+<div class="bg-primary text-white p-3 rounded-lg max-w-xs">
+<p class="text-sm">グルメとアートが好きです。あまり混雑しない隠れ家的な場所がいいな</p>
+</div>
+</div>
+<div class="flex justify-start">
+<div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg max-w-xs animate-pulse">
+<p class="text-sm">承知いたしました。グルメとアートを楽しむ、特別な京都旅行プランを作成します。少々お待ちください...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- "Create" Section -->
+<section class="py-20 md:py-24 bg-white dark:bg-gray-900" id="create">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center text-center gap-4 mb-12">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">創造性を解き放つ</h2>
+<p class="max-w-2xl text-gray-600 dark:text-gray-300">LifePalはあなたのアイデアを現実に変えるためのキャンバスです。</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-xl shadow-md flex flex-col gap-3">
+<div class="w-full aspect-video rounded-lg bg-cover bg-center" data-alt="Vibrant abstract digital art created by AI" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBp_FNGz2yRoZCXezgkqrFAeLfIRSS_4MKT6COaKgcZluYPXkhmgN20Znj3R4xr6nG6blqmkYaHwiqlLCPuNluG5vKeMnxuG_oZ6teh3SdJe6ph3ki6vkGiSo-JjPrKxXvQknSyCY9OVGScJlgtKbXHHoCsxfAe9NAFZGwpKSmKdPjmeX_Y0btqrNmhW5Ms8jPYwPHW6SQttbJzONNVdy0KUcyMe_H7zDbgJ4KI81Ms8SR4AhUIOGFKEtUHHybcnw8UyVAPNaG7z_F2')"></div>
+<h3 class="font-bold text-lg text-gray-900 dark:text-white">アートを創る</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300">言葉から息をのむようなビジュアルを生成します。</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-xl shadow-md flex flex-col gap-3">
+<div class="w-full aspect-video rounded-lg bg-cover bg-center" data-alt="Musical notes and soundwaves representing AI-composed music" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1WwsvShegz9oWlkuhFgTZHumEZ5Pa0w7ZKaFicQEg5XqWyY69y9l_-cq_JHaCOSfVRRjYr2z0JpdWl4QW46v_tw-hI6N0zVrLmE6PFmG3eVYnUgkNf8djy11OFWofhkWorJoT8nLkANLGzPTjcNH56sSQlX4WuuPCXUG967bdumGKoVQnDvfYTYO9gzkGh8ab6JWUCw9MAkG-Y30TxXBws1XwaDnBH1DUH8yU7wzrYgvsbZ1eJysKCLHo7uCJod7VgLXmncZAjHz3')"></div>
+<h3 class="font-bold text-lg text-gray-900 dark:text-white">音楽を奏でる</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300">気分やジャンルを指定して、オリジナルの楽曲を作曲。</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-xl shadow-md flex flex-col gap-3">
+<div class="w-full aspect-video rounded-lg bg-cover bg-center" data-alt="A world map with pins and routes, symbolizing travel planning" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUX0vHn7vQFRt1t17Tcmy7NJYpprkRxzVZXfxnNKx20uUwHMOCplcwkvXF8ZMIoaSXKRlkZEMDI_Ed-DLfaIOl1ytsRJCnOFSB69U7BuIAwqNu2lJAYQQ7rabkk4ZSz6iivHmWORpfj7mqZevDPYKHyyiVffoAyrFDbXGXeBtRxh4p0qYsz7HWbg5dCbhyNhFjKEeofqAOS1VujdHh4MS-MmbfY0UOCkhMI8MCKrokBNcm-90eSdXs1gyPH6Q8hOLcarz8TGILC2tp')"></div>
+<h3 class="font-bold text-lg text-gray-900 dark:text-white">旅行を計画する</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300">複雑な旅行計画も、AIとの対話で瞬時に完成。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-20 md:py-32">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="flex flex-col items-center gap-6">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl md:text-5xl">今日から、LifePalと新しい毎日を始めよう。</h2>
+<p class="text-gray-600 dark:text-gray-300">10万人以上のユーザーが体験している未来を、あなたも。</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<a class="flex items-center justify-center gap-3 bg-gray-800 dark:bg-white text-white dark:text-gray-900 rounded-lg h-14 px-6 font-semibold hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.3 4.70999C17.7 -0.100006 14.3 -1.5 11.1 2.29999C10.1 3.59999 9.59997 4.89999 9.59997 6.39999C9.59997 8.09999 10.3 9.59999 11.6 10.7C10.5 10.8 7.79997 10.2 6.19997 8.39999C3.19997 10.9 4.39997 15.6 6.99997 17.6C6.29997 18.2 5.19997 18.4 4.59997 18.2C5.19997 20.3 7.09997 21.8 9.29997 22C6.89997 23.8 3.5 22.9 2.1 20.3C4.3 21.6 7.1 21.7 9.1 20.7C13.2 18.7 15.4 14.1 14.7 9.79999C15.6 9.29999 17.1 8.79999 18.2 8.79999C19.1 8.79999 20.7 9.09999 21.7 10C21.9 6.29999 20.4 5.30999 19.3 4.70999ZM12.7 8.19999C12.1 7.49999 11.8 6.59999 11.8 5.69999C11.8 5.09999 12 4.49999 12.3 3.99999C13.8 5.09999 14.5 6.79999 14.2 8.59999C13.7 8.39999 13.2 8.29999 12.7 8.19999Z"></path></svg>
+<span>App Store</span>
+</a>
+<a class="flex items-center justify-center gap-3 bg-gray-800 dark:bg-white text-white dark:text-gray-900 rounded-lg h-14 px-6 font-semibold hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 11.03L3.87 0.720001C3.32 0.400001 2.65 0.76 2.65 1.41V22.58C2.65 23.23 3.32 23.59 3.87 23.27L22.47 12.96C22.99 12.65 22.99 11.34 22.46 11.03ZM5.65 19.58V4.41L17.76 12L5.65 19.58Z"></path></svg>
+<span>Google Play</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 LifePal Inc. All rights reserved.</p>
+<div class="flex items-center gap-4 text-sm">
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary" href="#">利用規約</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary" href="#">プライバシーポリシー</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- AI Chatbot Widget -->
+<button class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LifePal - 金融ダッシュボード</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0052CC",
+            "background-light": "#F8F9FA",
+            "background-dark": "#101c22",
+            "neutral-text-light": "#6B778C",
+            "neutral-text-dark": "#9FB3C8",
+            "neutral-border-light": "#DFE1E6",
+            "neutral-border-dark": "#3C4A5C"
+          },
+          fontFamily: {
+            "display": ["Inter", "Noto Sans JP", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="sticky top-0 h-screen w-64 flex-shrink-0 bg-white dark:bg-neutral-900/50 p-4 border-r border-neutral-border-light dark:border-neutral-border-dark flex flex-col justify-between">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-2 px-2">
+<svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-xl font-bold text-gray-900 dark:text-white">LifePal</span>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-600 dark:text-neutral-text-dark hover:bg-gray-100 dark:hover:bg-neutral-800" href="#">
+<span class="material-symbols-outlined text-2xl">dashboard</span>
+<p class="text-sm font-medium">ダッシュボード</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+<p class="text-sm font-medium">金融</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-600 dark:text-neutral-text-dark hover:bg-gray-100 dark:hover:bg-neutral-800" href="#">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+<p class="text-sm font-medium">健康</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-600 dark:text-neutral-text-dark hover:bg-gray-100 dark:hover:bg-neutral-800" href="#">
+<span class="material-symbols-outlined text-2xl">school</span>
+<p class="text-sm font-medium">学習</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-600 dark:text-neutral-text-dark hover:bg-gray-100 dark:hover:bg-neutral-800" href="#">
+<span class="material-symbols-outlined text-2xl">videogame_asset</span>
+<p class="text-sm font-medium">エンタメ</p>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-600 dark:text-neutral-text-dark hover:bg-gray-100 dark:hover:bg-neutral-800" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<p class="text-sm font-medium">設定</p>
+</a>
+<div class="border-t border-neutral-border-light dark:border-neutral-border-dark my-2"></div>
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with abstract background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBxGGniAI2IeqgsTMSv-pGANrebxH8n82qdXFLZwYYd60jAENyBhuYt0-YrS1-jRnxvybrNLVYZIaYiFAS-364uvbJh5pUBZo39q9LYPUL5-txO4LSlNS80AwJz8Hh5oBNA52kJTytisyrjoAc0-N4v5vVAMIx2TO2VE_Yd5uRTL9ooc-mpvTtzPoX-DVEB9Ydl_QTpmeMZVoCWTY4F7HeFEvl2imQAgaX09VIUmBTmITz5BslQAZYUbHbK1pctbIZ6Y4jy4J37A27S");'></div>
+<div class="flex flex-col">
+<h1 class="text-gray-900 dark:text-white text-sm font-medium leading-normal">田中 太郎</h1>
+<p class="text-neutral-text-light dark:text-neutral-text-dark text-xs font-normal leading-normal">ようこそ</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="mx-auto max-w-7xl">
+<!-- PageHeading -->
+<div class="mb-8">
+<p class="text-4xl font-black tracking-tighter text-gray-900 dark:text-white">金融ダッシュボード</p>
+<p class="mt-2 text-base font-normal text-neutral-text-light dark:text-neutral-text-dark">あなたの資産状況をまとめて確認できます。</p>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+<div class="flex flex-col gap-2 rounded-xl border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-900 p-6">
+<p class="text-base font-medium text-neutral-text-light dark:text-neutral-text-dark">総資産額</p>
+<p class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">¥1,234,567</p>
+<p class="text-sm font-medium text-green-600 dark:text-green-400">+1.2%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-900 p-6">
+<p class="text-base font-medium text-neutral-text-light dark:text-neutral-text-dark">今月の支出</p>
+<p class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">¥152,000</p>
+<p class="text-sm font-medium text-red-600 dark:text-red-400">+5.0% 先月比</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-900 p-6">
+<p class="text-base font-medium text-neutral-text-light dark:text-neutral-text-dark">今月の収入</p>
+<p class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">¥300,000</p>
+<p class="text-sm font-medium text-gray-500"> </p> <!-- Placeholder for alignment -->
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-900 p-6">
+<p class="text-base font-medium text-neutral-text-light dark:text-neutral-text-dark">予算残高</p>
+<p class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">¥48,000</p>
+<p class="text-sm font-medium text-gray-500">残り24%</p>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-8">
+<div class="lg:col-span-3 flex flex-col gap-4 rounded-xl border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-900 p-6">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">資産推移</h3>
+<div class="flex items-center gap-1 rounded-lg bg-gray-100 dark:bg-neutral-800 p-1 text-sm">
+<button class="px-3 py-1 rounded-md text-gray-500 dark:text-neutral-400">月</button>
+<button class="px-3 py-1 rounded-md bg-white dark:bg-neutral-700 text-gray-800 dark:text-white font-medium shadow-sm">年</button>
+</div>
+</div>
+<div class="w-full h-72">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="-3 0 478 150" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_1131_5935)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#0052CC" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_1131_5935" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#0052CC" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#0052CC" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="lg:col-span-2 flex flex-col gap-4 rounded-xl border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-900 p-6">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">支出の内訳</h3>
+<div class="flex-grow flex items-center justify-center relative h-56">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<circle class="stroke-current text-purple-200 dark:text-purple-800" cx="18" cy="18" fill="transparent" r="15.9154943092" stroke-width="4"></circle>
+<circle class="stroke-current text-blue-500" cx="18" cy="18" fill="transparent" r="15.9154943092" stroke-dasharray="40, 60" stroke-dashoffset="25" stroke-width="4"></circle>
+<circle class="stroke-current text-green-500" cx="18" cy="18" fill="transparent" r="15.9154943092" stroke-dasharray="30, 70" stroke-dashoffset="-15" stroke-width="4"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="text-sm text-neutral-text-light dark:text-neutral-text-dark">合計</span>
+<span class="text-2xl font-bold text-gray-900 dark:text-white">¥152,000</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+<div class="flex items-center gap-2">
+<div class="h-2 w-2 rounded-full bg-blue-500"></div>
+<span class="text-neutral-text-light dark:text-neutral-text-dark">食費</span>
+<span class="ml-auto font-medium text-gray-800 dark:text-gray-200">40%</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-2 w-2 rounded-full bg-green-500"></div>
+<span class="text-neutral-text-light dark:text-neutral-text-dark">住居費</span>
+<span class="ml-auto font-medium text-gray-800 dark:text-gray-200">30%</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-2 w-2 rounded-full bg-purple-500"></div>
+<span class="text-neutral-text-light dark:text-neutral-text-dark">娯楽費</span>
+<span class="ml-auto font-medium text-gray-800 dark:text-gray-200">20%</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-2 w-2 rounded-full bg-purple-200 dark:bg-purple-800"></div>
+<span class="text-neutral-text-light dark:text-neutral-text-dark">その他</span>
+<span class="ml-auto font-medium text-gray-800 dark:text-gray-200">10%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Transaction List -->
+<div class="lg:col-span-2 flex flex-col gap-4 rounded-xl border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-900 p-6">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">取引履歴</h3>
+<ul class="divide-y divide-neutral-border-light dark:divide-neutral-border-dark">
+<li class="flex items-center justify-between py-3">
+<div class="flex items-center gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 dark:bg-red-900/50">
+<span class="material-symbols-outlined text-red-500 dark:text-red-400">shopping_cart</span>
+</div>
+<div>
+<p class="font-medium text-gray-800 dark:text-gray-200">スーパーマーケット</p>
+<p class="text-sm text-neutral-text-light dark:text-neutral-text-dark">12月15日・食費</p>
+</div>
+</div>
+<p class="font-medium text-red-600 dark:text-red-400">- ¥5,480</p>
+</li>
+<li class="flex items-center justify-between py-3">
+<div class="flex items-center gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/50">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400">payments</span>
+</div>
+<div>
+<p class="font-medium text-gray-800 dark:text-gray-200">給与振込</p>
+<p class="text-sm text-neutral-text-light dark:text-neutral-text-dark">12月15日・収入</p>
+</div>
+</div>
+<p class="font-medium text-green-600 dark:text-green-400">+ ¥300,000</p>
+</li>
+<li class="flex items-center justify-between py-3">
+<div class="flex items-center gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/50">
+<span class="material-symbols-outlined text-blue-500 dark:text-blue-400">home</span>
+</div>
+<div>
+<p class="font-medium text-gray-800 dark:text-gray-200">家賃</p>
+<p class="text-sm text-neutral-text-light dark:text-neutral-text-dark">12月10日・住居費</p>
+</div>
+</div>
+<p class="font-medium text-red-600 dark:text-red-400">- ¥85,000</p>
+</li>
+</ul>
+</div>
+<!-- AI Suggestion & Goals -->
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4 rounded-xl border border-primary/50 dark:border-primary/70 bg-primary/5 dark:bg-primary/20 p-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">auto_awesome</span>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">AIからの提案</h3>
+</div>
+<p class="text-sm text-neutral-text-light dark:text-neutral-text-dark">分析の結果、通信費を見直すことで月々約<span class="font-bold text-gray-800 dark:text-gray-200">¥3,000</span>の節約が見込めます。プランの比較をしてみませんか？</p>
+<button class="w-full rounded-lg bg-primary py-2 text-sm font-medium text-white hover:bg-primary/90">詳細を見る</button>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-900 p-6">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">目標の進捗</h3>
+<div>
+<div class="mb-1 flex justify-between">
+<p class="text-sm font-medium text-gray-800 dark:text-gray-200">海外旅行資金</p>
+<p class="text-sm font-medium text-neutral-text-light dark:text-neutral-text-dark">75%</p>
+</div>
+<div class="h-2 w-full rounded-full bg-gray-200 dark:bg-neutral-700">
+<div class="h-2 rounded-full bg-primary" style="width: 75%"></div>
+</div>
+<p class="mt-1 text-xs text-neutral-text-light dark:text-neutral-text-dark">¥150,000 / ¥200,000</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
